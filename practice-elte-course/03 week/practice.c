@@ -149,9 +149,37 @@ void count_even_numbers()
     // 5. How many even numbers do we have from 0 to a given integer?
     // (Use for loop and while => Try with do ... while as well)
     int n;
+    int temp, for_counter = 0, while_counter = 0, do_while_counter = 0;
     printf("Enter a number (Int): ");
     scanf("%d", &n);
-    printf("There are %d even integers from 0 to %d.", (n / 2), n);
+
+    for (int i = 0; i <= n; i++)
+    {
+        if (i % 2 == 0)
+        {
+            for_counter++;
+        }
+    }
+
+    temp = n + 1;
+    while (temp--)
+    {
+        if (temp % 2 == 0)
+        {
+            while_counter++;
+        }
+    }
+
+    temp = n;
+    do
+    {
+        if (temp % 2 == 0)
+        {
+            do_while_counter++;
+        }
+    } while (temp--);
+
+    printf("With for loop = %d; with while loop = %d; with do while loop = %d\n", for_counter, while_counter, do_while_counter);
 }
 
 void compute_divisors()
@@ -311,12 +339,12 @@ int main()
     // compute_pow_of_two();
     // reverse_digits_of_int();
     // is_valid_time_format();
-    // count_even_numbers();
+    count_even_numbers();
     // compute_divisors();
     // compute_sum_of_one_hundred();
     // compute_prime_factor();
     // compute_fibonacci();
-    is_palindrome();
+    // is_palindrome();
     // compute_gcd();
     // compute_lcm();
     return 0;
