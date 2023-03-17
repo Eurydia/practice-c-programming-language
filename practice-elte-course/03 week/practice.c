@@ -46,6 +46,28 @@ bool is_prime(int n)
     }
     return true;
 }
+
+int reverse_int_digit(int n)
+{
+    int res = 0;
+    int temp = n, digit_counter = 0;
+
+    while (temp > 0)
+    {
+        digit_counter++;
+        temp = temp / 10;
+    }
+
+    // reversing the digits
+    // to check if it is a palindrome
+    for (int i = 0; i < digit_counter; i++)
+    {
+        temp = (n / powof(10, i)) % 10;
+        res = res + (temp * powof(10, digit_counter - i - 1));
+    }
+
+    return res;
+}
 // END OF HELPER
 // ---------------
 
@@ -99,16 +121,10 @@ void reverse_digits_of_int()
     // 3. Create a program that reads an integer x, 10 <= x <= 99
     // and prints It with his digits inverted. (modulos)
     int n;
-    printf("Enter a number separated (Int): ");
+    printf("Enter a number (Int): ");
     scanf("%d", &n);
 
-    printf("Reversed digits of %d = ", n);
-
-    while (n > 0)
-    {
-        printf("%d", n % 10);
-        n = n / 10;
-    }
+    printf("Reversed digits of %d = %d", n, reverse_int_digit(n));
 }
 
 void is_valid_time_format()
@@ -121,7 +137,7 @@ void is_valid_time_format()
     printf("Enter a time in this format (HH:MM): ");
     scanf("%d:%d", &hour, &minute);
 
-    if (0 < hour && hour < 24 && 0 < minute && minute < 60)
+    if (0 <= hour && hour < 24 && 0 <= minute && minute < 60)
     {
         printf("Second = %d", ((3600 * hour) + (60 * minute)));
         return;
@@ -216,9 +232,10 @@ void is_palindrome()
     // 10. Given an integer 12345, prints 54321.
     // Check If It is palindrome and try to print it without the middle digit "3".
     int n;
-    int n_temp, digits_counter = 0, n_reversed = 0;
+    int n_temp, digits_counter = 0, n_reversed;
     printf("Enter a number (Int): ");
     scanf("%d", &n);
+    n_reversed = reverse_int_digit(n);
 
     n_temp = n;
     while (n_temp > 0)
@@ -227,13 +244,6 @@ void is_palindrome()
         n_temp = n_temp / 10;
     }
 
-    // reversing the digits
-    // to check if it is a palindrome
-    for (int i = 0; i < digits_counter; i++)
-    {
-        n_temp = (n / powof(10, i)) % 10;
-        n_reversed = n_reversed + (n_temp * powof(10, digits_counter - i - 1));
-    }
     printf("Reversed = %d\n", n_reversed);
 
     if (n == n_reversed)
@@ -306,7 +316,7 @@ int main()
     // compute_sum_of_one_hundred();
     // compute_prime_factor();
     // compute_fibonacci();
-    // is_palindrome();
+    is_palindrome();
     // compute_gcd();
     // compute_lcm();
     return 0;
