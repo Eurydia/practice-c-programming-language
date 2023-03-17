@@ -331,11 +331,12 @@ void compute_lcm()
 
     min_val = minof(a, b);
     res = a * b;
-    for (int i = res - 1; i >= min_val; i--)
+    for (int i = min_val; i < a * b; i++)
     {
         if (i % a == 0 && i % b == 0)
         {
             res = i;
+            break;
         }
     }
 
