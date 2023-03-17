@@ -7,6 +7,16 @@
 
 // --------------------
 // HELPERS
+bool is_even(int n)
+{
+    return n % 2 == 0;
+}
+
+bool is_odd(int n)
+{
+    return n % 2 == 1;
+}
+
 int powof(int base, int exp)
 {
     int res = 1;
@@ -155,7 +165,7 @@ void count_even_numbers()
 
     for (int i = 0; i <= n; i++)
     {
-        if (i % 2 == 0)
+        if (is_even(i))
         {
             for_counter++;
         }
@@ -164,7 +174,7 @@ void count_even_numbers()
     temp = n + 1;
     while (temp--)
     {
-        if (temp % 2 == 0)
+        if (is_even(temp))
         {
             while_counter++;
         }
@@ -173,7 +183,7 @@ void count_even_numbers()
     temp = n;
     do
     {
-        if (temp % 2 == 0)
+        if (is_even(temp))
         {
             do_while_counter++;
         }
