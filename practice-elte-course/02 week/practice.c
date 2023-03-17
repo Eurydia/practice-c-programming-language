@@ -65,7 +65,7 @@ int main()
     // print_sum_float();
     // print_age();
     // print_escape_name();
-    print_area_perimeter_of_a_circle();
+    // print_area_perimeter_of_a_circle();
 
     return 0;
 }
