@@ -1,1 +1,0 @@
-# Not practice class due to timetable collision
