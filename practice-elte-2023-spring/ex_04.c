@@ -120,14 +120,22 @@ int findArrayExtremes()
     // 7. Create a program which prints the greatest/lowest element of an array.
     // (DO NOT sort the array)
 
-    int some_array[10], current;
+    int size;
+    printf("Enter array size (Int): ");
+    scanf("%d", &size);
 
-    int smallest = some_array[0], biggest = some_array[0];
-    int index = 1;
-
-    while (some_array[index] != '\0')
+    int array[size], current;
+    printf("Enter values of array separated by a space: ");
+    for (int i = 0; i < size; i++)
     {
-        current = some_array[index];
+        scanf("%d", &array[i]);
+    }
+
+    int smallest = array[0], biggest = array[0];
+
+    for (int index = 1; index < size; index++)
+    {
+        current = array[index];
         if (current > biggest)
         {
             biggest = current;
@@ -136,7 +144,6 @@ int findArrayExtremes()
         {
             smallest = current;
         }
-        index++;
     }
 
     printf("smallest = %d; biggest = %d", smallest, biggest);
@@ -146,17 +153,23 @@ int swapArrayExtremes()
 {
     // 8. Create a program which
     // swaps the smallest and greatest elements of an array.
+    int size;
+    printf("Enter array size (Int): ");
+    scanf("%d", &size);
 
-    int some_array[10],
-        current;
-
-    int smallest_index = 0, smallest = some_array[smallest_index];
-    int biggest_index = 0, biggest = some_array[biggest_index];
-    int index = 1;
-
-    while (some_array[index] != '\0')
+    int array[size], current;
+    printf("Enter values of array separated by a space: ");
+    for (int i = 0; i < size; i++)
     {
-        current = some_array[index];
+        scanf("%d", &array[i]);
+    }
+
+    int smallest_index = 0, smallest = array[smallest_index];
+    int biggest_index = 0, biggest = array[biggest_index];
+
+    for (int index = 0; index < size; index++)
+    {
+        current = array[index];
         if (current > biggest)
         {
             biggest = current;
@@ -170,41 +183,53 @@ int swapArrayExtremes()
         index++;
     }
 
-    some_array[smallest_index] = biggest;
-    some_array[biggest_index] = smallest;
+    array[smallest_index] = biggest;
+    array[biggest_index] = smallest;
+
+    printf("Swapped = ");
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", array[i]);
+    }
 }
 
 int stringLen()
 {
     // 9. Create a program which calculates the length of a string.
+    char str[9999];
+    printf("Enter a string: ");
+    scanf("%s", str);
 
-    char some_string[10];
-
-    int index = 0;
-
-    while (some_string[index] != '\0')
+    int size = 0;
+    while (str[size] != '\0')
     {
-        index++;
+        size++;
     }
 
-    printf("The length of %s is %d", some_string, index);
+    printf("The length of %s is %d", str, size);
 }
 
 int avgOfFloat()
 {
     // 10. Calculate the average of some floating point numbers in an array.
 
-    float some_arr[10], sum = 0;
-    int size = sizeof(some_arr) / sizeof(float);
-    size_t i = 0;
+    int size;
+    printf("Enter array size (Int): ");
+    scanf("%d", &size);
 
-    while (i < size)
+    float array[size], sum = 0;
+    printf("Enter values of array separated by a space: ");
+    for (int i = 0; i < size; i++)
     {
-        sum += some_arr[i];
-        i++;
+        scanf("%f", &array[i]);
     }
 
-    printf("Avg = %f / %d = %f", sum, size, sum / size);
+    for (int i = 0; i < size; i++)
+    {
+        sum += array[i];
+    }
+
+    printf("Avg = %.3f / %d = %.3f", sum, size, (sum / size));
 }
 
 int computeWeightedSum()
@@ -212,21 +237,26 @@ int computeWeightedSum()
     // 11. Create a program which calculates the weighted sum of an array. The weights
     //    are listed in another array. For example: first array: [1, 2, 3, 4, 5],
     //    second array: [1, 1, 2, 3, 5]. Weighted sum: 1*1 + 1*2 + 2*3 + 3*4 + 5*5.
-    int some_arr[10], weight = 1, sum = 0;
+    int size;
+    printf("Enter array size (Int): ");
+    scanf("%d", &size);
 
-    size_t len = sizeof(some_arr) / sizeof(int);
-    size_t i = 0;
-
-    for (; i < len; i++)
+    int array[size], sum = 0;
+    printf("Enter values of array separated by a space: ");
+    for (int i = 0; i < size; i++)
     {
-        sum += weight * some_arr[i];
-        weight++;
+        scanf("%d", &array[i]);
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        sum += array[i] * (i + 1);
     }
 
     printf("Weighted sum = %d", sum);
 }
 
-int convertToHex()
+int convertToDec()
 {
 
     // 12. Read the characters `0-9`, `a`, `b`, `c`, `d`, `e`, `f`.
@@ -235,13 +265,16 @@ int convertToHex()
     // it to base 10. Use character to digit conversion.
     // Use (https://www.tutorialspoint.com/how-to-convert-hexadecimal-to-decimal)
 
-    char buffer[99], current;
-    int i, decimal = 0, ir = 0;
+    int size, i, decimal = 0;
+    printf("Enter string size (Int): ");
+    scanf("%d", &size);
+
+    char buffer[size], current;
 
     printf("Enter a hex-valid characer [0-9,a-f]: ");
     scanf("%s", buffer);
 
-    for (i = 0; buffer[i] != 0; i++)
+    for (i = 0; i < size; i++)
     {
         current = buffer[i];
 
@@ -255,20 +288,16 @@ int convertToHex()
         }
     }
 
-    while (i > 0)
+    for (i = 0; i < size; i++)
     {
-        current = buffer[ir];
+        current = buffer[i];
 
         if ('0' <= current && current <= '9')
         {
-            decimal += (current - '0') * pow(16, i - 1);
-        }
-        else
-        {
-            decimal += (current - 'a') * pow(16, i - 1);
-        }
-        i--;
-        ir++;
+            decimal += (current - '0') * pow(16, size - i - 1);
+            continue;
+                }
+        decimal += (current - 'a') * pow(16, size - i - 1);
     }
     printf("Hex = %s; decimal = %d", buffer, decimal);
 }
@@ -416,9 +445,14 @@ int main()
     // byteSizes();
     // isLeapYear();
     // operatorChaining();
-    // convertToHex();
+    convertToDec();
     // printMatrix();
-    printPattern();
+    // printPattern();
 
+    // findArrayExtremes();
+    // swapArrayExtremes();
+    // stringLen();
+    // avgOfFloat();
+    // computeWeightedSum();
     return 0;
 }
