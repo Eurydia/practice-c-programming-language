@@ -316,6 +316,93 @@ int printPattern()
     // Star Pyramid Pattern,
     // Diamond and
     // Full Star Diamond Pattern :).
+
+    // --X--
+    // -XXX-
+    // XXXXX
+
+    // --X--
+    // -XXX-
+    // XXXXX
+    // -XXX-
+    // --X--
+
+    int s;
+    printf("Enter the size pattern (Int): ");
+    scanf("%d", &s);
+
+    int col_size = (2 * s) + 1;
+
+    // print pyramid
+    printf("Pyramid\n");
+    for (int row = 0; row < s; row++)
+    {
+        // left padding
+        for (int p = 0; p < (col_size - ((2 * row) + 1)) / 2; p++)
+        {
+            printf("-");
+        }
+
+        // Xs
+        for (int x = 0; x < (2 * row) + 1; x++)
+        {
+            printf("X");
+        }
+
+        // right padding
+        for (int p = 0; p < (col_size - ((2 * row) + 1)) / 2; p++)
+        {
+            printf("-");
+        }
+        printf("\n");
+    }
+
+    printf("Diamond\n");
+    // top half of diamond
+    for (int row = 0; row < s; row++)
+    {
+        // left padding
+        for (int p = 0; p < (col_size - ((2 * row) + 1)) / 2; p++)
+        {
+            printf("-");
+        }
+
+        // Xs
+        for (int x = 0; x < (2 * row) + 1; x++)
+        {
+            printf("X");
+        }
+
+        // right padding
+        for (int p = 0; p < (col_size - ((2 * row) + 1)) / 2; p++)
+        {
+            printf("-");
+        }
+        printf("\n");
+    }
+
+    // bottom part of diamond
+    for (int row = s; row >= 0; row--)
+    {
+        // left padding
+        for (int p = 0; p < (col_size - ((2 * row) + 1)) / 2; p++)
+        {
+            printf("-");
+        }
+
+        // Xs
+        for (int x = 0; x < (2 * row) + 1; x++)
+        {
+            printf("X");
+        }
+
+        // right padding
+        for (int p = 0; p < (col_size - ((2 * row) + 1)) / 2; p++)
+        {
+            printf("-");
+        }
+        printf("\n");
+    }
 }
 
 // 15. Do some research about bitwise operations and their usage:
@@ -330,7 +417,8 @@ int main()
     // isLeapYear();
     // operatorChaining();
     // convertToHex();
-    printMatrix();
+    // printMatrix();
+    printPattern();
 
     return 0;
 }
