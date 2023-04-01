@@ -237,20 +237,27 @@ int computeWeightedSum()
     // 11. Create a program which calculates the weighted sum of an array. The weights
     //    are listed in another array. For example: first array: [1, 2, 3, 4, 5],
     //    second array: [1, 1, 2, 3, 5]. Weighted sum: 1*1 + 1*2 + 2*3 + 3*4 + 5*5.
-    int size;
+    int size, i;
     printf("Enter array size (Int): ");
     scanf("%d", &size);
 
-    int array[size], sum = 0;
+    int array[size], weights[size], sum = 0;
+
     printf("Enter values of array separated by a space: ");
-    for (int i = 0; i < size; i++)
+    for (i = 0; i < size; i++)
     {
         scanf("%d", &array[i]);
     }
 
-    for (int i = 0; i < size; i++)
+    printf("Enter weights separated by a space: ");
+    for (i = 0; i < size; i++)
     {
-        sum += array[i] * (i + 1);
+        scanf("%d", &weights[i]);
+    }
+
+    for (i = 0; i < size; i++)
+    {
+        sum += array[i] * weights[i];
     }
 
     printf("Weighted sum = %d", sum);
@@ -265,7 +272,7 @@ int convertToDec()
     // it to base 10. Use character to digit conversion.
     // Use (https://www.tutorialspoint.com/how-to-convert-hexadecimal-to-decimal)
 
-    int size, i, decimal = 0;
+    int size, i, current_val, decimal = 0;
     printf("Enter string size (Int): ");
     scanf("%d", &size);
 
@@ -291,13 +298,8 @@ int convertToDec()
     for (i = 0; i < size; i++)
     {
         current = buffer[i];
-
-        if ('0' <= current && current <= '9')
-        {
-            decimal += (current - '0') * pow(16, size - i - 1);
-            continue;
-                }
-        decimal += (current - 'a') * pow(16, size - i - 1);
+        current_val = '0' <= current && current <= '9' ? (current - '0') : (current - 'a');
+        decimal += current_val * pow(16, size - i - 1);
     }
     printf("Hex = %s; decimal = %d", buffer, decimal);
 }
