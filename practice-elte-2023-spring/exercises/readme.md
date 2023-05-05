@@ -1,5 +1,5 @@
 # Read me
 
-**Note**:
+**Note**
 
-There is no `ex_01.c` due the timetable collision in first week.
+There is no `w01_ex.c` because the timetable collision in first week.

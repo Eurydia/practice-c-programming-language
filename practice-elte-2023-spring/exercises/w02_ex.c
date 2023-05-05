@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 #define M_PI 3.14159265358979323846
 
@@ -58,6 +59,16 @@ void print_area_perimeter_of_a_circle()
     printf("Perimeter = %.3f\n", perimeter);
 }
 
+void math_funcs()
+{
+
+    // task 7 -- Create a program which shows the usage of math functions.
+    // (Floor, ceil, pow, sort, fmin, fmax, ...)
+    float f = 1.9;
+    printf("Floor %f = %f\n", f, floor(f));
+    printf("Ceil %f = %f\n", f, ceil(f));
+}
+
 int main()
 {
     // print_name();
@@ -66,6 +77,6 @@ int main()
     // print_age();
     // print_escape_name();
     // print_area_perimeter_of_a_circle();
-
+    math_funcs();
     return 0;
 }

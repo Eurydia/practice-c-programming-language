@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-// Exercises:
-// ...
-// More to come :)
-
 // --------------------
 // HELPERS
 bool is_even(int n)

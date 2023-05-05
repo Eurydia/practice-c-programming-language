@@ -2,12 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Recap:
-// 0. Pointer function => Supose a calculator that performs 4 basic operations.
-//     How could you take advantage of function pointers? Notice that pointer function can be really confusing when we have many (*).
-
-// - Discuss tasks from lab_6.
-
 // Exercises (Random number generator and recursion):
 // 0. [Random number generator] Develop a program to simulate 20 rolls of a six-sided die and
 // print the value of each roll. Investigate what is actually happening at each run!
