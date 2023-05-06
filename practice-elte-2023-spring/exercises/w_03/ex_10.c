@@ -29,8 +29,10 @@ int main()
 {
     int n, temp, digits_counter = 0, n_temp;
 
-    printf("Enter a number (Int): ");
-    scanf("%d", &n);
+    // printf("Enter a number (Int): ");
+    // scanf("%d", &n);
+
+    n = 12345;
 
     if (is_palindrome(n))
     {

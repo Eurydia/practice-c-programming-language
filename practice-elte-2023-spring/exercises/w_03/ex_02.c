@@ -6,9 +6,11 @@ int main()
 {
     int power;
 
-    printf("Enter a number separated (Int): ");
-    scanf("%d", &power);
+    // printf("Enter a number separated (Int): ");
+    // scanf("%d", &power);
 
-    printf("Power of two = %d", pow(2, power));
+    power = 3;
+
+    printf("Power of two = %d", (int)pow(2, power));
     return 0;
 }

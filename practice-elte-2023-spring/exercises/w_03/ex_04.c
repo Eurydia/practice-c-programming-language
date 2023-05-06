@@ -4,8 +4,10 @@
 int main()
 {
     int h, m;
-    printf("Enter a time in this format (HH:MM): ");
-    scanf("%d:%d", &h, &m);
+    // printf("Enter a time in this format (HH:MM): ");
+    // scanf("%d:%d", &h, &m);
+
+    h = 12, m = 30;
 
     if (0 <= h && h < 24 && 0 <= m && m < 60)
     {

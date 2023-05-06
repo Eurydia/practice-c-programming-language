@@ -19,10 +19,12 @@ int main()
 {
     // with math formula
     int n;
-    printf("Enter a number (Int): ");
-    scanf("%d", &n);
+    // printf("Enter a number (Int): ");
+    // scanf("%d", &n);
 
-    printf("The prime factors of %d are = 1 ", n);
+    n = 12;
+
+    printf("The prime factors of %d are ", n);
     for (int i = 2; i <= n; i++)
     {
         if (n % i != 0 || !is_prime(i))

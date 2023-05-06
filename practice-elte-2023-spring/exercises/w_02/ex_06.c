@@ -3,9 +3,12 @@
 // 6. Create a program that calculates the area of a circle and its perimeter.
 int main()
 {
-    float PI = 3.14159265359;
-    float radius, area, perimeter;
-    scanf("%f", &radius);
+    const float PI = 3.14159265359;
+
+    // float radius, area, perimeter;
+    // scanf("%f", &radius);
+
+    float radius = 1.0, area, perimeter;
 
     area = radius * radius * PI;
     perimeter = 2 * radius * PI;

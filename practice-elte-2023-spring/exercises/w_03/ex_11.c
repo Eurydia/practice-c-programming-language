@@ -47,7 +47,14 @@ int lcm(int a, int b)
 // Try least common multiple as well.
 int main()
 {
-    printf("%d", lcm(12, 18));
 
+    int a, b;
+
+    // printf("Enter two positive integers separated by a space: ");
+    // scanf("%d %d", &a, &b);
+
+    a = 12, b = 18;
+
+    printf("lcm = %d, gcd = %d", lcm(a, b), gcd(a, b));
     return 0;
 }

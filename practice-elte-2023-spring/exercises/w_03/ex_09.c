@@ -3,10 +3,11 @@
 // 9. Prints the Fibonacci sequence and its (n - 1)th term. Note: n > 1.
 int main()
 {
-    int pos;
-    int curr = 0, prev = 1, next;
-    printf("Enter a number (Int): ");
-    scanf("%d", &pos);
+    int curr = 0, prev = 1, next, pos;
+    // printf("Enter a number (Int): ");
+    // scanf("%d", &pos);
+
+    pos = 5;
     while (pos > 0)
     {
         next = curr + prev; // 2 // 3 //5

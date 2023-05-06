@@ -4,10 +4,10 @@
 int main()
 {
     int n, reversed;
-    printf("Enter a number (Int): ");
-    scanf("%d", &n);
+    // printf("Enter a number (Int): ");
+    // scanf("%d", &n);
 
+    n = 12;
     reversed = n / 10 + ((n % 10) * 10);
-
     printf("Reversed digits of %d = %d", n, reversed);
 }

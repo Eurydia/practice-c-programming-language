@@ -4,8 +4,10 @@
 int main()
 {
     int n;
-    printf("Enter a number (Int): ");
-    scanf("%d", &n);
+    // printf("Enter a number (Int): ");
+    // scanf("%d", &n);
+
+    n = 12;
 
     printf("The divisors of %d are = 1, ", n);
 
