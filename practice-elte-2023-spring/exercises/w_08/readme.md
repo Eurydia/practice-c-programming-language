@@ -37,11 +37,11 @@ If the player's guess is incorrect, your program should loop until the player fi
 
 - [ ] 7. (Perfect Numbers) An integer number is said to be a perfect number if its factors, including 1 (but not the number itself), sum to the number. For example, 6 is a perfect number because 6 = 1 + 2 + 3. Write a function perfect that determines if parameter number is a perfect number. Use this function in a program that determines and prints all the perfect numbers between 1 and 1000. Print the factors of each perfect number to confirm that the number is indeed perfect. Challenge the power of your computer by testing numbers much larger than 1000.
 
-- [ ] 8. (Greatest Common Divisor) The greatest common divisor (GCD) of two integers is the largest integer that evenly divides each of the two numbers. Write function gcd that returns the greatest common divisor of two integers. [Try with loop and then with recursion]
+- [x] 8. (Greatest Common Divisor) The greatest common divisor (GCD) of two integers is the largest integer that evenly divides each of the two numbers. Write function gcd that returns the greatest common divisor of two integers. [Try with loop and then with recursion]
 
-- [ ] 9. (Recursive Greatest Common Divisor) The greatest common divisor of integers x and y is the largest integer that evenly divides both x and y. Write a recursive function gcd that returns the greatest common divisor of x and y. The gcd of x and y is defined recursively as follows: If y is equal to 0, then gcd(x, y) is x; otherwise gcd(x, y) is gcd(y, x % y) where % is the remainder operator.
+- [x] 9. (Recursive Greatest Common Divisor) The greatest common divisor of integers x and y is the largest integer that evenly divides both x and y. Write a recursive function gcd that returns the greatest common divisor of x and y. The gcd of x and y is defined recursively as follows: If y is equal to 0, then gcd(x, y) is x; otherwise gcd(x, y) is gcd(y, x % y) where % is the remainder operator.
 
-- [ ] 10. (Recursive Exponentiation) Write a recursive function power( base, exponent ) that when invoked returns base^(exponent)
+- [x] 10. (Recursive Exponentiation) Write a recursive function power( base, exponent ) that when invoked returns base^(exponent)
 
     For example, power( 3, 4 ) = 3 * 3 * 3 * 3. Assume that exponent is an integer greater than or equal
     to 1. Hint: The recursion step would use the relationship
