@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 // 7. Create a program which prints the greatest/lowest element of an array. (DO NOT sort the array)
 int main()

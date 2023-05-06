@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <ctype.h>
-#include <math.h>
 
 // 13. Given an odd integer number, prints the "X" pattern. Sample input: 11
 // Output:

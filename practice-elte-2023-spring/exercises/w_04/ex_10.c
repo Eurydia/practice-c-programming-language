@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 // 10. Calculate the average of some floating point numbers in an array.
 int main()

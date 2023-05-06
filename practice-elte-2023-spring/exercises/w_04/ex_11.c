@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 // 11. Create a program which calculates the weighted sum of an array. The weights
 //    are listed in another array. For example: first array: [1, 2, 3, 4, 5],

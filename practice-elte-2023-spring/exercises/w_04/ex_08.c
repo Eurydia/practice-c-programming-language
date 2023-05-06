@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 // 8. Create a program which swaps the smallest and greatest elements of an array.
 int main()

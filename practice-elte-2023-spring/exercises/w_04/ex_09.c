@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 // 9. Create a program which calculates the length of a string.
 int main()
