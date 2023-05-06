@@ -2,4 +2,4 @@
 
 **Note**
 
-There is no `w01_ex.c` because the timetable collision in first week.
+There is no `w_01/` due to the timetable collision in first week.
