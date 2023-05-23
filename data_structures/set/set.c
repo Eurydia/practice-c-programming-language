@@ -16,6 +16,12 @@ set_t *new_set(int capacity)
     return n_set;
 }
 
+void del_set(set_t *sPtr)
+{
+    free(sPtr->container);
+    free(sPtr);
+}
+
 void set_capacity(set_t *sPtr, int capacity)
 {
     if (capacity <= (sPtr->size))

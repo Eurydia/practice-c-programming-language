@@ -7,6 +7,7 @@ struct set;
 typedef struct set set_t;
 
 set_t *new_set(int capacity);
+void del_set(set_t *sPtr);
 void set_capacity(set_t *sPtr, int capacity);
 void insert(set_t *sPtr, int e);
 void remove(set_t *sPtr, int e);
