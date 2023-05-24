@@ -63,22 +63,19 @@ void insert(set_t *sPtr, int e)
 
 void remove(set_t *sPtr, int e)
 {
-    if (!has(sPtr, e))
-    {
-        return;
-    }
-
-    int i, cnt = 0;
+    int eIndex = -1;
+    int i;
     for (i = 0; i < sPtr->size; i++)
     {
         int curr = (sPtr->container)[i];
-        if (curr != e)
+        if (curr == e)
         {
-            (sPtr->container)[cnt] = curr;
-            cnt++;
+            eIndex = i;
+            break;
         }
     }
     sPtr->size -= 1;
+    sPtr->container[eIndex] = sPtr->container[sPtr->size];
 }
 
 int size(set_t *sPtr)
