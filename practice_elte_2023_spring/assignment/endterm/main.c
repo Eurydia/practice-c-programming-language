@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     char *fileName = argv[1];
 
     bool flagDisplayLineNumber = false;
-    bool flagReverseLineContent = false;
+    bool flagReverseContentOrder = false;
     bool flagFilterLineContent = false;
     char flagFilterKeyword[gLineLength] = "";
 
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
             flagDisplayLineNumber = true;
             break;
         case 'r':
-            flagReverseLineContent = true;
+            flagReverseContentOrder = true;
             break;
         case 'f':
             flagFilterLineContent = true;
@@ -52,14 +52,14 @@ int main(int argc, char *argv[])
     int lineCount = readFileContent(fileName, buffer, gLineLength);
 
     // Reverse lines if needed
-    if (flagReverseLineContent)
+    if (flagReverseContentOrder)
     {
-        for (int i = 0; i < lineCount; i++)
-        {
-            reverseLine(buffer[i]);
-        }
+        reverseFile(buffer, lineCount, gLineLength);
     }
-    reverseFile(buffer, lineCount, gLineLength);
+    for (int i = 0; i < lineCount; i++)
+    {
+        reverseLine(buffer[i]);
+    }
 
     // Output
     int i, lineNumber;
@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
         if (flagDisplayLineNumber)
         {
             lineNumber = i + 1;
-            if (flagReverseLineContent)
+            if (flagReverseContentOrder)
             {
                 lineNumber = lineCount - i;
             }
