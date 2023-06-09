@@ -25,6 +25,7 @@ int initialize(vector_t *vector, int capacity)
         return 0;
     }
 
+    // TODO: should return false if `malloc` could not reserve memory in heap
     int *data = malloc(capacity * sizeof(__vector_element_type));
 
     vector->data = data;
@@ -75,10 +76,12 @@ int insert(vector_t *vector, int index, __vector_element_type element)
     }
 
     // make room
+    // 1 2 3 4
+    //       ^
     int i;
-    for (i = vector->current_size; i >= index; i--)
+    for (i = vector->current_size; i > index; i--)
     {
-        vector->data[i + 1] = vector->data[i];
+        vector->data[i] = vector->data[i - 1];
     }
     vector->data[index] = element;
     vector->current_size++;
@@ -118,6 +121,7 @@ int set_capacity(vector_t *vector, int capacity)
         return 0;
     }
 
+    // TODO: should return false if `malloc` could not reserve memory in heap
     int *data = malloc(capacity * sizeof(__vector_element_type));
 
     arrcpy(vector->data, data, vector->current_size);
