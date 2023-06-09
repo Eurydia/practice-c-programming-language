@@ -41,12 +41,12 @@ int main(int argc, char *argv[])
             i++;
             insert(vec, optarg_a, optarg_b);
             break;
+        case 'E':
         case 'e':
             optarg_a = atoi(argv[i]);
             i++;
             erase(vec, optarg_a);
             break;
-
         default:
             break;
         }
