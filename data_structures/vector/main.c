@@ -52,5 +52,8 @@ int main(int argc, char *argv[])
         }
     }
 
+    dispose(vec);
+    free(vec);
+
     return 0;
 }
