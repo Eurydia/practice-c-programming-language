@@ -63,6 +63,8 @@ __vector_element_type retrieve(vector_t *vector, int index)
     return vector->data[index];
 }
 
+//---------------------------------------------
+
 int insert(vector_t *vector, int index, __vector_element_type element)
 {
     if (is_full(vector) == 1)
@@ -103,8 +105,9 @@ int erase(vector_t *vector, int index)
     vector->current_size--;
     return 1;
 }
+//---------------------------------------------
 
-int arrcpy(int *arr_a, int *arr_b, size_t size_a)
+int __arrcpy(int *arr_a, int *arr_b, size_t size_a)
 {
     int i;
     for (i = 0; i < size_a; i++)
@@ -124,7 +127,7 @@ int set_capacity(vector_t *vector, int capacity)
     // TODO: should return false if `malloc` could not reserve memory in heap
     int *data = malloc(capacity * sizeof(__vector_element_type));
 
-    arrcpy(vector->data, data, vector->current_size);
+    __arrcpy(vector->data, data, vector->current_size);
     free(vector->data);
     vector->data = data;
     vector->capacity = capacity;
@@ -155,3 +158,5 @@ int safe_insert(vector_t *vector, int index, __vector_element_type element)
     }
     return insert(vector, index, element);
 }
+
+//---------------------------------------------
