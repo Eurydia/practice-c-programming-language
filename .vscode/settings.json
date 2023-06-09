@@ -3,6 +3,8 @@
         "*.tsx": "typescriptreact",
         "*.astro": "typescript",
         "*.mdx": "markdown",
-        "stdbool.h": "c"
+        "*.md": "markdown",
+        "stdbool.h": "c",
+        "vector.h": "c"
     }
 }
