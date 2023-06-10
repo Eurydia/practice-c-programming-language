@@ -27,6 +27,10 @@ int initialize(vector_t *vector, int capacity)
 
     // TODO: should return false if `malloc` could not reserve memory in heap
     int *data = malloc(capacity * sizeof(__vector_element_type));
+    if (!data)
+    {
+        return 0;
+    }
 
     vector->data = data;
     vector->capacity = capacity;
@@ -124,8 +128,11 @@ int set_capacity(vector_t *vector, int capacity)
         return 0;
     }
 
-    // TODO: should return false if `malloc` could not reserve memory in heap
     int *data = malloc(capacity * sizeof(__vector_element_type));
+    if (!data)
+    {
+        return 0;
+    }
 
     __arrcpy(vector->data, data, vector->current_size);
     free(vector->data);
