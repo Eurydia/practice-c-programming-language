@@ -4,7 +4,10 @@
 #define CALCULATOR_MEMORY_SIZE 10
 #define FILE_BUFFER_SIZE 100
 
-int readConsole(const char const *file_name, calculator_t *calc)
+void splitLine
+
+    int
+    readFile(const char const *file_name, calculator_t *calc)
 {
     FILE *file = fopen(file_name, "r");
 
